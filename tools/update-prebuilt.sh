@@ -16,8 +16,9 @@ for f in init child stage0 hello_dyn svc_test surf_test rwtouch mg_test cpu_test
 	cp userland/obj/$f prebuilt/userland/
 done
 if [ -f $MU/Build/redwoodPkg/RELEASE_CLANGPDB/FV/SILICIUM_UEFI.fd ]; then
-	cp $MU/Build/redwoodPkg/RELEASE_CLANGPDB/FV/SILICIUM_UEFI.fd $MU/BootShim/BootShim.bin $MU/Resources/DTBs/redwood.dtb \
+	cp $MU/Build/redwoodPkg/RELEASE_CLANGPDB/FV/SILICIUM_UEFI.fd $MU/BootShim/BootShim.bin \
 		$MU/Resources/ramdisk $MU/Resources/Scripts/mkbootimg.py devices/poco-x5-pro/prebuilt/
+	cp $MU/Resources/DTBs/redwood.dtb devices/poco-x5-pro/prebuilt/device-tree.dtb
 fi
 {
 	echo "Built $(date '+%Y-%m-%d %H:%M') from this tree."
