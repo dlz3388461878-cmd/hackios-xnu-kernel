@@ -47,6 +47,9 @@ loader:
 firmware:
 	devices/$(DEVICE)/pull-firmware.sh
 
+# Keep a failed runner visible through the logging pipeline.
+qemu: SHELL := bash
+qemu: .SHELLFLAGS := -o pipefail -c
 qemu:
 	mkdir -p logs
 	qemu/run-ios.sh $(SECS) -display gtk | tee logs/qemu.log
