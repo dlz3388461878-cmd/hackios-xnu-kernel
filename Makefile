@@ -12,12 +12,12 @@
 #   make prebuilt        refresh prebuilt/ from what was built (tools/update-prebuilt.sh)
 #   make clean           build output of the kernel, loader and images
 #
-#   DEVICE=redwood       the device directory under devices/ (default redwood)
+#   DEVICE=poco-x5-pro   the device directory under devices/ (default poco-x5-pro)
 #   ARGS="..."           kernel arguments for make phone (default: everything the phone has)
 #   SECS=600             the session's length for make phone / make qemu
 #   JOBS=8               parallel jobs for the kernel build
 
-DEVICE ?= redwood
+DEVICE ?= poco-x5-pro
 JOBS ?= 8
 SECS ?= 600
 ARGS ?= touchscreen=1 gpu=1 adsp=1 sound=4 wifi=1 haptic=5 modem=1 modem_again=1 modem_buffer=0xa8000000
