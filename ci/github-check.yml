@@ -31,3 +31,5 @@ jobs:
           else
             echo "no self-test on this runner"
           fi
+      - name: SoC args generator reproduces the POCO X5 Pro values
+        run: sh tools/soc-args-test.sh
